@@ -14,8 +14,6 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
 
-import java.io.IOException;
-
 /**
  * Created by Kunnu on 12/2/2017.
  */
@@ -77,22 +75,5 @@ public class location extends AppCompatActivity {
             }
         }
     }
-  public void postData(String la, String lo) {
-        // Create a new HttpClient and Post Header
-        HttpClient httpclient = new HttpClient();
-        HttpGet  htget = new HttpGet("http://<your_app_url>/Home/Book/"+la+"/"+lo);
-
-        try {
-            // Execute HTTP Post Request
-            HttpResponse response = httpclient.execute(htget);
-            String resp = response.getStatusLine().toString();
-            Toast.makeText(this, resp, 5000).show();
-
-
-        } catch (ClientProtocolException e) {
-            Toast.makeText(this, "Error", 5000).show();
-        } catch (IOException e) {
-            Toast.makeText(this, "Error", 5000).show();
-        }
 
 }

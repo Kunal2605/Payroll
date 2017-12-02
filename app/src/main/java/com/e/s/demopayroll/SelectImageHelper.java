@@ -102,8 +102,6 @@ public class SelectImageHelper {
         Uri destination = Uri.fromFile(new File(context.getCacheDir(), "cropped"));
         //Crop.of(source, destination).asSquare().start(this);
         Crop.of(source, destination).withAspect(1, 1).withMaxSize(200, 200).asSquare().start(context);
-        Toast.makeText(context, "dcndjckx", Toast.LENGTH_SHORT).show();
-
     }
 
     private void handleCrop(int resultCode, Intent result) {
