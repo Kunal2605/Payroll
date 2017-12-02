@@ -68,6 +68,7 @@ public class location extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Place selectedPlace = PlacePicker.getPlace(data, location.this);
                 LatLng latLng = selectedPlace.getLatLng();
+                
                 text.setText(selectedPlace.getLatLng().toString());
                 String toastMsg = String.format("Place: %s", selectedPlace.getName());
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();

@@ -35,8 +35,11 @@ include('connect.php');
           </div>
           <div class="collapse navbar-collapse">
       		 <ul class="nav navbar-nav">
-      		  <li><a href="add.php">Add a User</li></a>
+      		  <li class="disabled"><a href="add.php">Add a User</li></a>
       		  <li class="active"><a href="locate.php">Locate User</li></a>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="locate.php">Go Back</li></a>
            </ul>
           </div>
       	</div>
@@ -45,7 +48,7 @@ include('connect.php');
       <hr style="width:50%">
     <div id="row">
       <div class="col-sm-3">
-    <!-- This is a comment -->
+        <img src="userp.jpg" width="200px" height="200px">
       </div>
       <div class="col-sm-3">
         <table class="table">
@@ -66,6 +69,8 @@ include('connect.php');
       </table>
       </div>
       <div class="col-sm-6">
+        <div id="start"></div>
+        <div id="end"></div>
         <div id="map"></div>
         <script>
 
@@ -73,14 +78,12 @@ include('connect.php');
             var lati = <?php echo $array['lati']; ?>;
             var long = <?php echo $array['longi']; ?>;
 
-
-
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: new google.maps.LatLng(0, 0),
+    zoom: 10,
+    center: new google.maps.LatLng(lati, long),
 
   });
-  for(var i = 0 ; i < 5 ; i++){
+  for(var i = 0 ; i < 4 ; i++){
   // Create markers on the map
 
     var pos = new google.maps.LatLng(lati, long);
@@ -90,8 +93,8 @@ include('connect.php');
       map: map,
 });
 
-lati += .50;
-long += .50;
+lati -= Math.random()*.005;
+long -= Math.random()*.001;
  }
 }
         </script>
