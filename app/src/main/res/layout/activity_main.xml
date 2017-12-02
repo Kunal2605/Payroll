@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.e.s.demopayroll.MainActivity"
+    android:layout_marginTop="20dp">
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Employee Id"
+        android:textSize="25sp"
+        android:inputType="number"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_below="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Password"
+        android:textSize="25sp"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"/>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:text="Login"
+        android:background="@drawable/round_corner"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
